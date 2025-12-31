@@ -1,0 +1,65 @@
+server:
+  port: 8080
+#  ssl:
+    #    enabled: true
+    #    key-store: /etc/ssl/certs/cooperco/wildcard_cooperco_fin_ec.p12
+    #    key-store: wildcard_cooperco_fin_ec.p12
+    #    key-store-password: C00p3rc0+2023
+#    keyStoreType: PKCS12
+spring:
+#  application:
+#    name: digcooperco
+#  datasource:
+#    password: I38wMjU45F3
+#    url: jdbc:oracle:thin:@//132.150.10.209:1521/CERTPDB
+#    username: UCONSULTA
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+      enabled: true
+      location: /opt/cooperco/dgcooperco/tmp/
+#  jpa:
+    #database-platform: org.hibernate.dialect.Oracle10gDialect
+ #   hibernate:
+ #     ddl-auto: none
+ #     naming:
+ #       physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+ #   open-in-view: false
+ # web:
+ #   locale: es_EC
+ # cloud:
+ #   skipper:
+ #     client:
+ #       skip-ssl-validation: true
+cooperoco:
+  url: https://digitalizacion.cooperco.fin.ec:8080/
+version_cliente: 1.2.29
+core_pool_size: 16
+cron_schedule_folders: "0 22 18 * * ?"
+users:
+  admin:
+    username: coopercoroot
+    password: E4wL*S.52tEvvzu4f*iH
+start_thread: 20000
+count_down_latch: 20
+try_upload_file: 3
+messages:
+  config_info: No hay configuración para este log.
+  user_not_exist: El usuario {{username}} no existe, por favor contacte con un administrador.
+  update_version: Por favor, actualice a la nueva versión del sistema (Nueva versión disponible {{version}}).
+  start_session: Iniciando sesión {{username}}
+  user_find: Se encontró el usuario {{username}}
+  user_login: USUARIO ENCONTRADO
+  user_login_error: Error al momento de buscar al usuario {{username}}
+  user_login_password_error: El usuario {{username}} puso mal su contraseña
+  file_general_error: Se produjo un error al intentar subir el archivo a Nextcloud
+  service_error: Error en el servicio
+  uploading_image: Subiendo imagen, fuente {{username}}
+  uploading_file: Subiendo imagen, fuente {{username}}
+  file_existing_folder: Se verifica la existencia de la carpeta {{path}}. Intento {{number}}
+  file_waiting_create_folder: Se espera a que este la carpeta
+simple_config:
+  schema: UCONSULTA
+  catalog_dig_utils: PK_DIGI_UTILS
+  get_user_folder: PR_OBTENER_USUARIO_CARPETA
